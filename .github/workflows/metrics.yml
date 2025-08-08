@@ -2,54 +2,45 @@ name: Generate Metrics
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # daily at 03:00 UTC
-  workflow_dispatch:       # allow manual runs
+    - cron: "0 3 * * *"
+  workflow_dispatch:
 
 permissions:
-  contents: write          # required to commit the generated SVG
+  contents: write
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Generate metrics
-        uses: lowlighter/metrics@v3.34     # <- pin to a known-stable tag
+      - name: Generate metrics (minimal)
+        uses: lowlighter/metrics@v3.34
         with:
-          # Auth
           token: ${{ secrets.METRICS_TOKEN }}
 
-          # Profile
           user: rehmansheikh222
           template: classic
           base: header, activity, community
           config_timezone: UTC
 
-          # Output
           filename: metrics.svg
           committer_message: "chore: update metrics"
           retries: 3
           retries_delay: 10
 
-          # Show plugin errors instead of silently drawing "Unexpected error"
+          # Better stability
+          use_prebuilt_image: yes
           plugins_errors_fatal: yes
           debug: yes
 
-          # --- Achievements (minimal, safe) ---
-          plugin_achievements: yes
-          plugin_achievements_display: detailed
-          plugin_achievements_threshold: C
-          plugin_achievements_secrets: no   # keep "no" for now
-
-          # --- Organizations (new API) ---
+          # --- Organizations (supported way) ---
           plugin_people: yes
           plugin_people_types: organizations
           plugin_people_limit: 8
           plugin_people_identicons: yes
 
-          # --- Languages mini-card ---
+          # --- Languages ---
           plugin_languages: yes
           plugin_languages_sections: most-used
           plugin_languages_indepth: no
