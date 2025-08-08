@@ -43,6 +43,12 @@ I enjoy solving challenging problems, contributing to **open-source projects**, 
 ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white)
 ![Git](https://img.shields.io/badge/-Git-F05032?logo=git&logoColor=white)
 
+**Testing**  
+![Jest](https://img.shields.io/badge/-Jest-C21325?logo=jest&logoColor=white)
+![Vitest](https://img.shields.io/badge/-Vitest-6E9F18?logo=vitest&logoColor=white)
+![React Testing Library](https://img.shields.io/badge/-React%20Testing%20Library-E33332?logo=testing-library&logoColor=white)
+![Pytest](https://img.shields.io/badge/-Pytest-0A9EDC?logo=pytest&logoColor=white)
+
 **APIs & Protocols**  
 ![REST API](https://img.shields.io/badge/-REST-02569B?logo=rest&logoColor=white)
 ![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?logo=graphql&logoColor=white)
@@ -59,6 +65,12 @@ I enjoy solving challenging problems, contributing to **open-source projects**, 
 ## 🏆 GitHub Trophies  
 
 ![Trophies](https://github-trophies.vercel.app/?username=rehmansheikh222&theme=radical&no-frame=false&no-bg=false&margin-w=4)
+
+---
+
+## 🏅 Achievements & Organizations
+
+![Metrics](./metrics.svg)
 
 ---
 
