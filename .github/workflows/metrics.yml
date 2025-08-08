@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Generate metrics
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34     # <- pin to a known-stable tag
         with:
           # Auth
           token: ${{ secrets.METRICS_TOKEN }}
@@ -33,11 +33,15 @@ jobs:
           retries: 3
           retries_delay: 10
 
-          # --- Achievements ---
+          # Show plugin errors instead of silently drawing "Unexpected error"
+          plugins_errors_fatal: yes
+          debug: yes
+
+          # --- Achievements (minimal, safe) ---
           plugin_achievements: yes
           plugin_achievements_display: detailed
           plugin_achievements_threshold: C
-          plugin_achievements_secrets: no
+          plugin_achievements_secrets: no   # keep "no" for now
 
           # --- Organizations (new API) ---
           plugin_people: yes
