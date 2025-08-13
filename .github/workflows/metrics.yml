@@ -34,6 +34,12 @@ jobs:
           plugins_errors_fatal: yes
           debug: yes
 
+          # make the action commit directly
+          output_action: commit
+          committer_branch: main
+
+          committer_token: ${{ secrets.PERSONAL_TOKEN }}
+
           # --- Organizations (supported way) ---
           plugin_people: yes
           plugin_people_types: organizations
